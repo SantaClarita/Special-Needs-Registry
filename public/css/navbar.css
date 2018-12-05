@@ -1,0 +1,162 @@
+
+.navbar-top {
+  	background-color: #447145;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.navbar-header {}
+.image-brand {
+    width: 150%;
+    max-width: 325px;
+    height: auto;
+    min-width: 200px;
+}
+.navbar-top .navbar-brand {
+  	color: #ffffff;
+    font-size: 21px;
+    font-weight: 200;
+    padding-top: 15px;
+    padding-right: 0px;
+    padding-bottom: 15px;
+    padding-left: 0px;
+}
+.navbar-top .navbar-brand:hover,
+.navbar-top .navbar-brand:focus {
+  	color: lightgreen;
+}
+
+.active.navbar-brand {
+  color: lightgreen;
+}
+.navbar-top .navbar-text {
+  	color: #ffffff;
+}
+.navbar-top .navbar-nav > li > a {
+    font-size: 18px;
+  	color: #ffffff;
+    font-weight: 200;
+}
+
+.navbar-top .navbar-nav > li > a:hover,
+.navbar-top .navbar-nav > li > a:focus {
+  	color: lightgreen;
+  	background-color: #447145;
+}
+.navbar-top .navbar-nav > li > .dropdown-menu {
+  	background-color: #447145;
+}
+.navbar-top .navbar-nav > li > .dropdown-menu > li > a {
+  	color: #ffffff;
+}
+.navbar-top .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-top .navbar-nav > li > .dropdown-menu > li > a:focus {
+  	color: lightgreen;
+  	background-color: #447145;
+}
+.navbar-top .navbar-nav > li > .dropdown-menu > li.divider {
+  	background-color: #447145;
+}
+.navbar-top .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-top .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-top .navbar-nav .open .dropdown-menu > .active > a:focus {
+  	color: lightgreen;
+  	background-color: #447145;
+}
+.navbar-top .navbar-nav > .active > a,
+.navbar-top .navbar-nav > .active > a:hover,
+.navbar-top .navbar-nav > .active > a:focus {
+  	color: lightgreen;
+  	background-color: #447145;
+}
+.navbar-top .navbar-nav > .open > a,
+.navbar-top .navbar-nav > .open > a:hover,
+.navbar-top .navbar-nav > .open > a:focus {
+  	color: lightgreen;
+  	background-color: #447145;
+}
+.navbar-top .navbar-toggle {
+  	border-color: #447145;
+}
+.navbar-top .navbar-toggle:hover,
+.navbar-top .navbar-toggle:focus {
+  	background-color: #447145;
+}
+.navbar-top .navbar-toggle .icon-bar {
+  	background-color: #ffffff;
+}
+.navbar-top .navbar-collapse,
+.navbar-top .navbar-form {
+  	border-color: #ffffff;
+}
+.navbar-top .navbar-link {
+  	color: #ffffff;
+}
+.navbar-top .navbar-link:hover {
+  	color: lightgreen;
+}
+
+@media (max-width: 1246px) {
+  	.navbar-top .navbar-nav .open .dropdown-menu > li > a {
+    	color: #ffffff;
+  	}
+  	.navbar-top .navbar-nav .open .dropdown-menu > li > a:hover,
+  	.navbar-top .navbar-nav .open .dropdown-menu > li > a:focus {
+    	color: lightgreen;
+  	}
+  	.navbar-top .navbar-nav .open .dropdown-menu > .active > a,
+  	.navbar-top .navbar-nav .open .dropdown-menu > .active > a:hover,
+  	.navbar-top .navbar-nav .open .dropdown-menu > .active > a:focus {
+    	color: lightgreen;
+    	background-color: #004f1b;
+  	}
+}
+
+/** This is overwrite the bootstrap navbar collapse **/
+@media (max-width: 1020px) {
+    .image-brand {
+        width: 100%;
+        max-width: 325px;
+        height: auto;
+        min-width: 200px;
+    }
+    #brand {
+      display: block;
+    }
+    #main .navbar-header {
+        float: none;
+        min-width: 320px;
+    }
+    #main .navbar-left,.navbar-right {
+        float: right !important;
+        margin-right: 0px;
+    }
+    #main .navbar-toggle {
+        display: block;
+        margin-right: 10px;
+    }
+    #main .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    #main .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    #main .navbar-collapse.collapse {
+        display: none!important;
+    }
+    #main .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    #main .navbar-nav>li {
+        float: none;
+    }
+    #main .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #main .collapse.in{
+        display:block !important;
+    }
+}

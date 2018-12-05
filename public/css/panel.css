@@ -1,0 +1,44 @@
+.panel .panel-heading {
+	background-color: #888888;
+	font-size: 18px;
+}
+
+.panel .panel-body {
+	font-size: 17px;
+}
+
+.panel-title {
+	color: white;
+	font-size: 18px;
+}
+
+.panel-default > .panel-heading {
+	color: white;
+	font-size: 18px;
+}
+
+h2 > small {
+	color: grey;
+}
+
+.form-group {
+	color: black;
+}
+
+.modal-header {
+	background-color: #888888;
+	color:white;
+}
+
+.modal-body {
+	color:black;
+}
+table.profile {
+	width: 100%;
+}
+table.profile > tbody > tr {
+	border-spacing: 0;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;  
+}
+

@@ -1,0 +1,25 @@
+#rsidebar {
+    height:100%;
+    position:fixed;
+    /*background-color: lightblue;*/
+    right:0;
+}
+
+#rsiderbarheader {
+	color: #447145;
+	font-weight: 700;
+}
+
+img.rsidebarimg {
+	height: 160px;
+	width: 160px;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+@media (max-width: 991px) {
+	#rsidebar {
+		visibility: hidden;
+	    display: none !important;
+	}
+}

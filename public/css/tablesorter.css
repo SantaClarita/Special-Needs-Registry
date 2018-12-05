@@ -1,0 +1,35 @@
+/* rows hidden by filtering (needed for child rows) */
+.tablesorter .filtered {
+    display: none;
+}
+
+/* ajax error row */
+.tablesorter .tablesorter-errorRow td {
+    text-align: center;
+    cursor: pointer;
+    background-color: #e6bf99;
+}
+
+table.tablesorter thead tr .header ,
+table.tablesorter thead tr .tablesorter-header {
+    background-image: url(bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+
+table.tablesorter thead tr .headerSortUp,
+table.tablesorter thead tr .tablesorter-headerSortUp,
+table.tablesorter thead tr .tablesorter-headerAsc  {
+    background-image: url(asc.gif);
+}
+
+table.tablesorter thead tr .headerSortDown,
+table.tablesorter thead tr .tablesorter-headerSortDown,
+table.tablesorter thead tr .tablesorter-headerDesc  {
+    background-image: url(desc.gif);
+}
+
+.sorter-false {
+	background-image: none !important;
+}
