@@ -22,6 +22,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2>Special Needs Information <small style="color: white;"><b><i class="glyphicon glyphicon-edit"></i></b>
+                        <a class="pull-right btn btn-default btn-primary" href="{{ url('/participants/search') }}"><i class="fa fa-arrow-left"></i> Back</a>
                         {{ $participant->fname." ".$participant->middleinitial." ".$participant->lname}}</small></h2>
                         <div class="row">
                             @if(count($user) > 0)

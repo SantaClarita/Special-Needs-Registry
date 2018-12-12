@@ -210,11 +210,18 @@ class vw_participant extends Model
         return $this->belongsToMany('App\Disability');
     }
 
+    protected $appends = ['count_comments'];
+
+    public function getCountCommentsAttribute() {
+        if($this->image_link)
+            return base64_encode(Storage::get($this->image_link));
+    }
+
     public function imagechk()
     {
         return Storage::disk('local')->exists($this->image_link);
     }
-
+    
     public function age() {
         if ($this->birthdate->age != 0)
             return $this->birthdate->age." years old";

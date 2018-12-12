@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="text-center">
-        {{ $participants->appends(Request::only('search', 'searchdeleted', 'age_start', 'age_end', 'gender'))->links() }}
+        {{ $participants->appends(Request::only('search', 'searchdeleted', 'age_range', 'gender'))->links() }}
     </div>
     <div class="panel-heading clearfix">
         <b>Search Results <i class="glyphicon glyphicon-th-list"> </i></b>
@@ -40,17 +40,19 @@
                     <h4>Filters</h4>
                     <div class="pull-right">
                         <label> Age
-                            <select class="selectpicker" name="age_start" title="Start" data-width="auto">
-                                <option value="0" {{ old("age_start") == "0" ? "selected" :"" }}>None</option>
-                                @for ($i = 1; $i < 120; $i++)
-                                    <option value="{{$i}}" {{ old("age_start") == "$i" ? "selected" :"" }}>{{$i}}</option>
-                                @endfor 
-                            </select>
-                            <select class="selectpicker" name="age_end" title="End" data-width="auto">
-                                <option value="0" {{ old("age_end") == "0" ? "selected" :"" }}>None</option>
-                                @for ($i = 1; $i < 120; $i++)
-                                    <option value="{{$i}}" {{ old("age_end") == "$i" ? "selected" :"" }}>{{$i}}</option>
-                                @endfor 
+                            <select class="selectpicker" name="age_range" title="Age Filter" data-width="auto">
+                                <option value="0" {{ old("age_range") == "0" ? "selected" :"" }}>All Ages</option>
+                                <option value="1" {{ old("age_range") == "1" ? "selected" :"" }}>5 - less</option>
+                                <option value="2" {{ old("age_range") == "2" ? "selected" :"" }}>6 - 10</option>
+                                <option value="3" {{ old("age_range") == "3" ? "selected" :"" }}>11 - 15</option>
+                                <option value="4" {{ old("age_range") == "4" ? "selected" :"" }}>16 - 20</option>
+                                <option value="5" {{ old("age_range") == "5" ? "selected" :"" }}>21 - 25</option>
+                                <option value="6" {{ old("age_range") == "6" ? "selected" :"" }}>26 - 30</option>
+                                <option value="7" {{ old("age_range") == "7" ? "selected" :"" }}>31 - 40</option>
+                                <option value="8" {{ old("age_range") == "8" ? "selected" :"" }}>41 - 50</option>
+                                <option value="9" {{ old("age_range") == "9" ? "selected" :"" }}>51 - 60</option>
+                                <option value="10" {{ old("age_range") == "10" ? "selected" :"" }}>61 - 70</option>
+                                <option value="11" {{ old("age_range") == "11" ? "selected" :"" }}>70 or more</option>
                             </select>
                         </label>
                     </div>
@@ -97,7 +99,7 @@
                     <tr>
                         <td class="table-text">
                             @if ($participant->imagechk())
-                                <img class="img-rounded" src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" alt="TEMP No Image Found" height="100" width="100">
+                                <img class="img-rounded" src="{{ url('/file/participants/'.basename(Storage::url($participant->image_link))) }}" alt="TEMP No Image Found" height="100" width="100">
                             @else 
                                 <img class="img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="100" width="100">
                             @endif
@@ -174,7 +176,7 @@
             </tbody>
         </table>
         <div class="text-center">
-            {{ $participants->appends(Request::only('search', 'searchdeleted', 'age_start', 'age_end', 'gender'))->links() }}
+            {{ $participants->appends(Request::only('search', 'searchdeleted', 'age_range', 'gender'))->links() }}
         </div>
     </div>
     @else

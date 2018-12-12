@@ -15,11 +15,12 @@
             <h2>Special Needs Information <small style="color:white;">{{ $participant->fname." ".$participant->middleinitial." ".$participant->lname}}</small>
                 <button class="btn btn-primary hidden-print pull-right" onclick="myPrint()"><i class="fa fa-print" aria-hidden="true"></i>Print</button>
                 @can('manageParticipantList', $participant)
-                    <a class="hidden-print" href="{{ url('/participants/edit/'.$participant->id) }}"><button class="btn btn-default btn-primary pull-right"><i class="fa fa-pencil-square-o"></i> Edit </button></a>
+                    <a class="ml-2 hidden-print" href="{{ url('/participants/edit/'.$participant->id) }}"><button class="btn btn-default btn-primary pull-right"><i class="fa fa-pencil-square-o"></i> Edit</button></a>
                 @endcan
                 @can('viewParticipantFlyer', $participant)
-                <a class="hidden-print" href="{{ url('/participants/flyer/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-newspaper-o"></i> Flyer </button></a>
+                    <a class="hidden-print" href="{{ url('/participants/flyer/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-newspaper-o"></i> Flyer</button></a>
                 @endcan
+                <a class="hidden-print" href="{{ url('/participants/ID/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-id-card-o"></i> ID</button></a>
                 <div class="row">
                     <h5>    
                     @if(count($user) > 0)

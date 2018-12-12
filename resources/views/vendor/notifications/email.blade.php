@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
@@ -82,20 +85,44 @@
         </td>
       </tr>
       <!-- Message Body -->
-  <tr>
+      <!-- Intro -->
+      <tr>
     <td width="627" bgcolor="#ffffff" style="padding:0 20px 20px;">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td width="587" valign="top" id="main">
-            <div mc:edit="main">
-              <h1 style="margin:0;"></h1>
-              <p>Click here to reset your password: <a href="{{ $link = url('password/reset', $token).'?email='.urlencode($user->getEmailForPasswordReset()) }}"> {{ $link }} </a></p>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td width="587" valign="top" id="main">
+              <div mc:edit="main">
+                <h1 style="margin:0;">Password Reset Requested For This Email</h1>
+                @foreach ($outroLines as $line)
+                    <p>
+                        {{ $line }}
+                    </p>
+                @endforeach
+                @if (isset($actionText))
+                    <table>
+                        <tr>
+                            <td>
+                                <p>
+                                    If you’re having trouble clicking the "{{ $actionText }}" button,
+                                    copy and paste the URL below into your web browser:
+                                </p>
+                                <p>
+                                    <a href="{{ $actionUrl }}" target="_blank">
+                                        {{ $actionUrl }}
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                @endif
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+
   <!-- Message Footer -->
   <tr>
     <td width="627" align="center" valign="top">

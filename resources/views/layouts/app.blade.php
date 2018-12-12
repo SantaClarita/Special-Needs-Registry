@@ -51,6 +51,7 @@
     <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/bootstrap-select.js') }}"></script>
     <script type="text/javascript">
+        $('.selectpicker').selectpicker();
         @if (count($errors) > 0)
             $('#create-modal').modal('show');
         @endif

@@ -30,21 +30,21 @@ class ParticipantRepository
     }
 
     public function filters($coll, $request) {
-        $start = $request->input('age_start');
-        $end = $request->input('age_end');
-
-        //if both empty
-        if ( !(($start == '' || $start==0)  && ($end == ''|| $end==0)) ) {
-            if($start == '' || $start == 0) // if one empty input
-                $start = -1;
-            if($end == '' || $end == 0) //if one empty input
-                $end = 200;
-            if($end < $start) { //Swap if order is backwards
-                $tmp = $start;
-                $start = $end;
-                $end = $tmp;
-            }
-            $coll->whereBetween('age', [ $start, $end ]);
+        if ($request->input('age_range')) {
+            $age_arr = [
+                [0, 5],
+                [6, 10],
+                [11, 15],
+                [16, 20],
+                [21, 25],
+                [26, 30],
+                [31, 40],
+                [41, 50],
+                [51, 60],
+                [61, 70],
+                [70, 150],
+            ];
+            $coll->whereBetween('age', $age_arr[$request->input('age_range')-1]);
         }
 
         $gender = $request->input('gender');
@@ -55,7 +55,7 @@ class ParticipantRepository
     }
 
     public function search($request)
-    {   
+    {      
          if ($request->input('searchdeleted') == 1) 
             $coll = vw_participant::withTrashed()
                                 ->search($request->input('search'), null, true)

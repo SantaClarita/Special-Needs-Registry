@@ -13,6 +13,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-select.min.css') }}">
     <style type="text/css">body {padding-top: 50px;}</style>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/lsidebar.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/rsidebar.css') }}">
@@ -56,6 +57,11 @@
                                 <div>
                                     <b><h4 class="glyphicon glyphicon-envelope"> </h4> Flyer</b> - 
                                     Click me for information
+                                    @can('viewParticipantProfile', $participant)
+                                    <a class="noevent" href="{{ url('/participants/profile/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-user-circle"></i> Profile </button></a>
+                                    @endcan
+                                    <a class="noevent" href="{{ url('/participants/ID/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-id-card-o"></i> ID </button></a>
+                                    <a class="noevent" href="{{ url('/participants/search') }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-arrow-left"></i> Back</button></a>
                                 </div>
                             </span>       
                         </h4>
@@ -74,11 +80,8 @@
                         <h3 class="panel-title text-center">Missing Person Information - {{ $participant->fname." ".$participant->middleinitial." ".$participant->lname}}
                         </h3>
                         <div>
-                            @can('viewParticipantProfile', $participant)
-                            <a class="hidden-print" href="{{ url('/participants/profile/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-user-circle"></i> Profile </button></a>
-                            @endcan
                             @can('manageParticipantList', $participant)
-                            <a class="hidden-print" href="{{ url('/participants/edit/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit </button></a>
+                                <a class="hidden-print" href="{{ url('/participants/edit/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit </button></a>
                             @endcan
                         </div>
                         </br></br class="hidden-print">
@@ -196,10 +199,10 @@
         </div>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script>
-
+<script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/bootstrap-select.js') }}"></script>
+<script type="text/javascript">
     var myVar;
 
     function myFunction() {
@@ -210,4 +213,9 @@
       document.getElementById("loader").style.display = "block";
     }
 
+    $('.selectpicker').selectpicker();
+    $('.noevent').on('click', function(e){
+    //$('#'+this.id).click();
+        e.stopPropagation();
+    });
 </script>

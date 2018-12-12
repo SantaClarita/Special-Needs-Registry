@@ -18,24 +18,13 @@ if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
 }
 
 
-//.
-Route::get('/', function () {
-    return view('about');
-});
-
-//faqs
-Route::get('/faqs', function () {
-    return view('faqs');
-});
-
-//contact Us
-Route::get('/contactus', function () {
-    return view('contactus');
-});
+Route::get('/faqs', 'GeneralController@faqsIndex');
+Route::get('/contactus', 'GeneralController@contactIndex');
+Route::get('/', 'GeneralController@aboutIndex');
 Route::post('/contactus', 'GeneralController@contactUs');
 
 //register/login users
-Route::auth();
+Auth::routes();
 
 //application
 Route::get('/applications/create', 'ApplicationManagement\ApplicationController@create');
@@ -75,6 +64,8 @@ Route::post('/participants/flyer/{participant}', 'ParticipantManagement\Particip
 //Route::post('/participants/flyer/undo/{participant}/{id}', 'ParticipantManagement\ParticipantController@undoemailFlyerPDF');
 
 //Route::get('/participants/showProfilePDF/{participant}', 'ParticipantManagement\ParticipantController@showProfilePDF'); //TOO MUCH MEMORY USED
+Route::get('file/participants/{filename}', 'FileController@getFile')->where('filename', '^[^/]+$');
+
 
 //roles
 Route::get('/roles', 'RoleManagement\RoleController@index');

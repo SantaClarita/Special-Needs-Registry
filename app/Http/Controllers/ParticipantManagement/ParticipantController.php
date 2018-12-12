@@ -448,13 +448,12 @@ class ParticipantController extends Controller
     }
 
     protected function search(Request $request) {
-        if (policy(Participant::class)->CanSearchparticipants(Auth::user())) {
-            $request->flashOnly('search', 'searchdeleted', 'age_start', 'age_end', 'gender');
+        if (policy(Participant::class)->CanSearchParticipants(Auth::user())) {
+            $request->flashOnly('search', 'searchdeleted', 'age_range', 'gender');
             return view('participants.search', [ 
-                    'participants' => $this->participants->search($request),
-                    'tmp' => Participant::first(),
-                ]); 
-            
+                'participants' => $this->participants->search($request),
+                'tmp' => Participant::first(),
+            ]); 
         }
         abort(401, 'You are not authorized to view or preform that action.');
     }

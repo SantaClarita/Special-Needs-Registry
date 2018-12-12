@@ -21,6 +21,21 @@ class GeneralController extends Controller
         $this->settings = $settings;
     }
 
+    public function contactIndex()
+    {
+        return view('contactus');
+    }
+
+    public function faqsIndex()
+    {
+        return view('faqs');
+    }
+
+    public function aboutIndex()
+    {
+        return view('about');
+    }
+
     public function contactUs(Request $request)
     {
         $this->validate($request, [ 
