@@ -116,7 +116,7 @@
                             </div>
                             <div>
                             @if( strtotime(Carbon\Carbon::parse($participant->updated_at)->addYears(1)->format('F d, Y')) < strtotime(Carbon\Carbon::now()))
-                                <b style="color:red;">Note:</b> Information out of date since  {{Carbon\Carbon::parse($participant->updated_at)->addYears(2)->format('M d, Y') }}.
+                                <b style="color:red;">Note:</b> Information out of date since  {{Carbon\Carbon::parse($participant->updated_at)->addYears(1)->format('M d, Y') }}.
                             @else
                                 <b style="color:#00cc36;">Note:</b> Information up-to-date until 
                                 {{Carbon\Carbon::parse($participant->updated_at)->addYears(1)->format('M d, Y') }}. 
