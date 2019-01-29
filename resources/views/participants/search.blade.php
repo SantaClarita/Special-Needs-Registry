@@ -99,9 +99,9 @@
                     <tr>
                         <td class="table-text">
                             @if ($participant->imagechk())
-                                <img class="img-rounded" src="{{ url('/file/participants/'.basename(Storage::url($participant->image_link))) }}" alt="TEMP No Image Found" height="100" width="100">
+                                <img class="aspectImage idImage img-rounded" src="{{ url('/file/participants/'.basename(Storage::url($participant->image_link))) }}" alt="TEMP No Image Found" height="100" width="100">
                             @else 
-                                <img class="img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="100" width="100">
+                                <img class="aspectImage idImage img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="100" width="100">
                             @endif
                         </td>
                         <td class="table-text" style="width:37.5%;">

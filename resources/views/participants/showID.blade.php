@@ -16,9 +16,9 @@
             <div class="innerProfileID">
                 <div align="center" class="ProfileIDImage">
                     @if ($participant->imagechk())
-                        <img class="img-rounded" src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" alt="TEMP No Image Found" height="150" width="150">
+                        <img class="aspectImage idImage img-rounded" src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" alt="TEMP No Image Found" height="150" width="150">
                     @else 
-                        <img class="img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="150" width="150">
+                        <img class="aspectImage idImage img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="150" width="150">
                     @endif
                 </div>
                 <p>

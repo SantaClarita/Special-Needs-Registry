@@ -40,7 +40,7 @@
 
                     @can('manageParticipantListAboveOwner', $participant)
                     <h5> Change Ownership:
-                    <select class="selectpicker" name="user" style="width: 100%;" title="No Owner Found">
+                    <select class="selectpicker" name="user" title="No Owner Found">
                         @foreach ($users as $i=>$user)
                          <option value="{{$user->id}}" 
                             {{ (old("user") == $user->id ? "selected":$user->id == $participant->user_id ? "selected":"") }}
@@ -60,7 +60,7 @@
                     Participant Image 250px X 250px <font color="red">*</font></label>
                     <div class="col-md-6 form-group">
                         @if ($participant->imagechk())
-                            <img src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" height="100" width="100">
+                            <img class="aspectImage idImage" src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" height="100" width="100">
                         @endif
                         <div>
                             <label for="image">Choose an image to upload</label>
