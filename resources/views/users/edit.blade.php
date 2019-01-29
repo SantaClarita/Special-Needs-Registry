@@ -51,27 +51,51 @@
                     @endif
                 </div>
             </div>
-            @if (count($allroles) > 0)
-                <label for="allroles" class="col-md-4 control-label">
-                 Roles List</label>
-                @php ($out = 0)
-                @foreach ($allroles as $role)
-                    <div class="checkbox col-md-8 col-md-offset-4">
-                    @foreach ($roles as $chk)
-                    @if ($chk->id === $role->id)
-                        <label><input type="checkbox" checked name="role[{{ $role->id }}]" value="{{ $role->id }}"
-                                @if(is_array(old('role')) && in_array($role->id, old('role'))) checked @endif>{{ $role->name }}</label>
-                        @php ($out = 1)
-                    @endif
-                    @endforeach
-                    @if ($out == 0)
-                        <label><input type="checkbox" name="role[{{ $role->id }}]" value="{{ $role->id }}"
-                                @if(is_array(old('role')) && in_array($role->id, old('role'))) checked @endif>{{ $role->name }}</label>
-                    @endif
+            <div  class="form-group">
+                @if (count($allroles) > 0)
+                    <label for="allroles" class="col-md-4 control-label">
+                     Roles List</label>
                     @php ($out = 0)
-                    </div>
-                @endforeach
-            @endif
+                    @foreach ($allroles as $role)
+                        <div class="checkbox col-md-8 col-md-offset-4">
+                        @foreach ($roles as $chk)
+                        @if ($chk->id === $role->id)
+                            <label><input type="checkbox" checked name="role[{{ $role->id }}]" value="{{ $role->id }}"
+                                    @if(is_array(old('role')) && in_array($role->id, old('role'))) checked @endif>{{ $role->name }}</label>
+                            @php ($out = 1)
+                        @endif
+                        @endforeach
+                        @if ($out == 0)
+                            <label><input type="checkbox" name="role[{{ $role->id }}]" value="{{ $role->id }}"
+                                    @if(is_array(old('role')) && in_array($role->id, old('role'))) checked @endif>{{ $role->name }}</label>
+                        @endif
+                        @php ($out = 0)
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                <label for="password" class="col-md-4 control-label">New Password</label>
+                <div class="col-md-6">
+                    <input id="password" type="password" class="form-control" name="password">
+                    @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                <label for="password-confirm" class="col-md-4 control-label">Confirm New Password</label>
+                <div class="col-md-6">
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                    @if ($errors->has('password_confirmation'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
         </div>
         <div class="panel-footer">
             <div class="form-group">

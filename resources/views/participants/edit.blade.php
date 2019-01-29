@@ -22,7 +22,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2>Special Needs Information <small style="color: white;"><b><i class="glyphicon glyphicon-edit"></i></b>
-                        <a class="pull-right btn btn-default btn-primary" href="{{ url('/participants/search') }}"><i class="fa fa-arrow-left"></i> Back</a>
+                        <a class="pull-right btn btn-default btn-primary" href="{{ URL::previous() }}"><i class="fa fa-arrow-left"></i> Back</a>
                         {{ $participant->fname." ".$participant->middleinitial." ".$participant->lname}}</small></h2>
                         <div class="row">
                             @if(count($user) > 0)
@@ -62,7 +62,10 @@
                         @if ($participant->imagechk())
                             <img src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" height="100" width="100">
                         @endif
-                        <input type="file" class="form-control" name="image">
+                        <div>
+                            <label for="image">Choose an image to upload</label>
+                            <input type="file" name="image">
+                        </div>
                             @if ($errors->has('image'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('image') }}</strong>

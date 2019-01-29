@@ -124,6 +124,7 @@ class UserController extends Controller
                 'lname' => 'required|max:255',
                 //'phone' => 'required',
                 'email' => 'required|email|max:255|unique:users,email,'.$user->id,
+                'password' => 'required_with:password-confirm|min:6|confirmed',
             ]);
 
             $user = User::find($user->id);
@@ -136,13 +137,20 @@ class UserController extends Controller
             $user->lname = $request->input('lname');
             $user->phone = $request->input('phone');
             $user->email = $request->input('email');
+
+            //Pass
+            if ($request->input('password') != null) {
+                $user->password = Hash::make($request->input('password'));
+            }
+
+
             if($user->isDirty()) //phone is always changed due to mutator need fix
                 $user->save($user->getDirty());
 
             if ($request->input('role') == null)
-            	$user->roles()->sync([]); 
+                $user->roles()->sync([]); 
             else
-            	$user->roles()->sync($request->input('role')); 
+                $user->roles()->sync($request->input('role')); 
 
             //logs
             $rolename="";
@@ -156,6 +164,7 @@ class UserController extends Controller
         }
         abort(401, 'You are not authorized to view or preform that action.');
     }
+
 
     protected function updatePersonalInfo(Request $request)
     {
