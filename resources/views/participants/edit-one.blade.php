@@ -108,6 +108,7 @@
                         <option value='{{$i}}' {{ (old("heightfeet") == "$i" ? "selected": "$heightft" == "$i" ? "selected":"") }}>{{$i}}</option>
                     @endfor
                 </select>
+                Feet
                 @if ($errors->has('heightfeet'))
                 <span class="help-block">
                     <strong>{{ $errors->first('heightfeet') }}</strong>
@@ -121,6 +122,7 @@
                         <option value='{{$i}}' {{ (old("heightinch") == "$i" ? "selected": "$heightin" == "$i" ? "selected":"") }}>{{$i}}</option>
                     @endfor
                 </select>
+                Inches
                 @if ($errors->has('heightinch'))
                 <span class="help-block">
                     <strong>{{ $errors->first('heightinch') }}</strong>
@@ -135,6 +137,7 @@
                             <option value='{{$i}}' {{ (old("heightfeet") == "$i" ? "selected":"") }}>{{$i}}</option>
                         @endfor
                     </select>
+                    Feet
                     @if ($errors->has('heightfeet'))
                     <span class="help-block">
                         <strong>{{ $errors->first('heightfeet') }}</strong>
@@ -145,9 +148,10 @@
                     <select name="heightinch" class="form-control">
                         <option selected value> In </option>
                         @for ($i = 0; $i < 12; $i++)
-                            <option value='{{$i}}' {{ (old("heightinch") == "$i" ? "selected":"") }}>{{$i}}</option>
+                            <option value='{{$i}}' {{ (old("heightinch") == "$i" ? "selected":"") }}>{{$i}} </option>
                         @endfor
                     </select>
+                    Inches
                     @if ($errors->has('heightinch'))
                     <span class="help-block">
                         <strong>{{ $errors->first('heightinch') }}</strong>
@@ -156,7 +160,7 @@
                 </div>
                 @if ($nullchk == false)
                 <div class="col-sm-3">
-                    Bad Data was spat out: "{{ $participant->height }}"
+                    <font color="red">*Bad Data was spat out: "{{ $participant->height }}". Please fix it by using the dropdowns.</font>
                 </div>
                 @endif
             @endif
@@ -168,7 +172,7 @@
         Weight (lbs) <font color="red">*</font></label>
     <div>
         <div class="col-md-6 form-group">
-            <input type="text" class="form-control" id="weight" name="weight" value="{{ old( 'weight', $participant->getOriginal('weight')) }}"/>
+            <input type="number" placeholder="Hint: 105" class="form-control" id="weight" name="weight" value="{{ old( 'weight', $participant->getOriginal('weight')) }}"/>
             @if ($errors->has('weight'))
                 <span class="help-block">
                     <strong>{{ $errors->first('weight') }}</strong>
