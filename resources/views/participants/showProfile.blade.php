@@ -50,9 +50,9 @@
             <div class="col-md-12 col-xs-12">
                 <div class="col-md-3 col-xs-3" style="float:left;padding:2px;">
                     @if ($participant->imagechk())
-                        <img class="img-rounded" src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" alt="TEMP No Image Found" height="150" width="150">
+                        <img class="aspectImage profileImage img-rounded" src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" alt="TEMP No Image Found" height="150" width="150">
                     @else 
-                        <img class="img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="150" width="150">
+                        <img class="aspectImage profileImage img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="150" width="150">
                     @endif
                 </div>
                 <div class="col-md-9 col-xs-9" style="float:right; position:relative;" >

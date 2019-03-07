@@ -95,7 +95,7 @@ class ParticipantController extends Controller
                 'typeofresidence' => 'required',
                 'address1' => 'required',
                 //'address2' => 'required',
-                'city' => 'required|alpha_space',
+                'city' => 'required',
                 'state' => 'required',
                 'zip' => 'required',
                 'homephone' => 'required_without:cellphone',
@@ -105,7 +105,7 @@ class ParticipantController extends Controller
                 'eme_name' => 'required',
                 'eme_address1' => 'required',
                 //'eme_address2' => 'required',
-                'eme_city' => 'required|alpha_space',
+                'eme_city' => 'required',
                 'eme_state' => 'required',
                 'eme_zip' => 'required',
                 'eme_homephone' => 'required_without:eme_cellphone',
@@ -114,7 +114,7 @@ class ParticipantController extends Controller
                 'alt_eme_name' => 'required_unless:alt_eme_relation,==,0',
                 'alt_eme_address1' => 'required_unless:alt_eme_relation,==,0',
                 //'alt_eme_address2' => 'required_unless:alt_eme_relation,==,0',
-                'alt_eme_city' => 'required_unless:alt_eme_relation,==,0|alpha_space',
+                'alt_eme_city' => 'required_unless:alt_eme_relation,==,0',
                 'alt_eme_state' => 'required_unless:alt_eme_relation,==,0',
                 'alt_eme_zip' => 'required_unless:alt_eme_relation,==,0',
                 'alt_eme_homephone' => 'required_unless:alt_eme_relation,==,0',
@@ -123,8 +123,8 @@ class ParticipantController extends Controller
                 'possiblelocations' => 'max:50',
                 'behaviorialhazards' => 'max:150',
                 'otherinfo' => 'max:150',
-                'primarylang' => 'alpha_space|max:50',
-                'secondarylang' => 'alpha_space|max:50',
+                'primarylang' => 'max:50',
+                'secondarylang' => 'max:50',
                 'communicationmethod' => 'max:150',
                 //'physicianname1' => 'required',
                 'physicianphone1' => 'required_with:physicianname1',
@@ -310,6 +310,8 @@ class ParticipantController extends Controller
     }
 
     protected function showFlyerPDF(Request $request, Participant $participant) {
+        //set execution time
+        ini_set('max_execution_time', 120);
         if (policy(Participant::class)->viewParticipantFlyer(Auth::user(), $participant)) {
             $data = array('participant'=> $participant);
             $pdf = PDF::loadView('participants.showFlyerPDF', $data);
@@ -320,6 +322,7 @@ class ParticipantController extends Controller
     }
 
     protected function emailFlyerPDF(Request $request, Participant $participant) {
+        ini_set('max_execution_time', 120);
         if (policy(Participant::class)->emailParticipantFlyer(Auth::user(), $participant)) {
             //logs
             Log::warning(Auth::user()->fname.' '.Auth::user()->lname.' ('.Auth::user()->email.') has sent a mass flyer email for "'.$participant->fname.' '.$participant->lname.'"');

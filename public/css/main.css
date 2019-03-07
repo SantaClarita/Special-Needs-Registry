@@ -65,6 +65,22 @@ div.alert {
   padding-right: 5px;
   padding-bottom: 0px;
 }
+.aspectImage {
+  background: rgba(136,136,136, .3);
+    object-fit: scale-down;
+    overflow: hidden;
+}
+
+.idImage {
+    width:125px;  
+    height:125px;
+}
+
+.profileImage{
+    width:150px;  
+    height:150px;
+
+}
 
 @media print {
 

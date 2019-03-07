@@ -99,9 +99,9 @@
                     <tr>
                         <td class="table-text">
                             @if ($participant->imagechk())
-                                <img class="img-rounded" src="{{ url('/file/participants/'.basename(Storage::url($participant->image_link))) }}" alt="TEMP No Image Found" height="100" width="100">
+                                <img class="aspectImage idImage img-rounded" src="{{ url('/file/participants/'.basename(Storage::url($participant->image_link))) }}" alt="TEMP No Image Found" height="100" width="100">
                             @else 
-                                <img class="img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="100" width="100">
+                                <img class="aspectImage idImage img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="100" width="100">
                             @endif
                         </td>
                         <td class="table-text" style="width:37.5%;">
@@ -116,7 +116,7 @@
                             </div>
                             <div>
                             @if( strtotime(Carbon\Carbon::parse($participant->updated_at)->addYears(1)->format('F d, Y')) < strtotime(Carbon\Carbon::now()))
-                                <b style="color:red;">Note:</b> Information out of date since  {{Carbon\Carbon::parse($participant->updated_at)->addYears(2)->format('M d, Y') }}.
+                                <b style="color:red;">Note:</b> Information out of date since  {{Carbon\Carbon::parse($participant->updated_at)->addYears(1)->format('M d, Y') }}.
                             @else
                                 <b style="color:#00cc36;">Note:</b> Information up-to-date until 
                                 {{Carbon\Carbon::parse($participant->updated_at)->addYears(1)->format('M d, Y') }}. 

@@ -4,8 +4,8 @@
 <div class="col-md-12">
     <div class="row">
             <div class="alert alert-danger" role="alert">
-                <b>Note:</b> Dear participant, thank you for responding to our recent request to update any profiles you have entered in the Santa Clarita Special Needs Registry. The information you provided is current and available to our deputies in case of emergency. </br></br>
-                At this time we have updated the database. To have continued access to your old account, <a href="{{ url('/password/reset') }}">please reset your password</a>.</br></br>
+                <b>Note:</b> Dear Participant, thank you for responding to our recent request to update any profiles you have entered in the Santa Clarita Special Needs Registry. Make sure the information you provided is current and available to our deputies in case of an emergency. </br></br>
+                If you did not login in since November 15, 2018, <a href="{{ url('/password/reset') }}">please reset your password</a> to have continued access to your old account.</br></br>
                 If you have any questions or concerns, please contact Family Focus Resource Center at {{config('app.familyFocusPhone')}}
 
             </div>
