@@ -42,6 +42,17 @@ These are the current email features.
 	6. Guest/user uses the contact form  
 
 ## Quick Setup (Local) (https://laravel.com/docs/5.3/installation)
+
+	Skill Requirements
+	* Ability to setup a server on the cloud and perform installations, modifications, and upgrades of MySQL, PHP, Apache/NGINX HTTP Server.
+	* Ability to install and manage an MySQL database
+	* Ability to install and manage an Apache/NGINX HTTP Server
+	* Ability to install and manage DNS domains and certificates
+	* Experience with LAMP stack is a big plus
+	* Understanding in Object Oriented Programming (OOP) with PHP and HTML/CSS 
+	* Frontend built mainly with Bootstrap 3.3.7
+
+
 	1. Clone the directory (https://github.com/SantaClarita/Special-Needs-Registry.git)
 	2. Navigate to project folder and run "composer install"
 	3. Make directory "storage" and "bootstrap/cache" writable by the web server
