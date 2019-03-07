@@ -48,10 +48,10 @@ These are the current email features.
 	* Ability to install and manage an MySQL database
 	* Ability to install and manage an Apache/NGINX HTTP Server
 	* Ability to install and manage DNS domains and certificates
+	* Ability to install/manage a email server or use another email mailing service 
 	* Experience with LAMP stack is a big plus
 	* Understanding in Object Oriented Programming (OOP) with PHP and HTML/CSS 
-	* Frontend built mainly with Bootstrap 3.3.7
-
+	* Javascript knowledge is a plus
 
 	1. Clone the directory (https://github.com/SantaClarita/Special-Needs-Registry.git)
 	2. Navigate to project folder and run "composer install"
