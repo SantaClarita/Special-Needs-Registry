@@ -144,7 +144,7 @@
     <h3 class="panel-title">Main Emergency Contact Information<i class="fa fa-caret-down pull-right" aria-hidden="true"></i></h3>
 </div>
 
-<div class="collapse panel-body" id="part22">
+<div class="collapse in panel-body" id="part22">
     <div class="form-group row {{ $errors->has('eme_relation') ? ' has-error' : '' }}">
         <label for="eme_relation" class="col-md-4 control-label">
             Relationship to Participant <font color="red">*</font></label>
@@ -271,7 +271,7 @@
     <h3 class="panel-title">Alternative Emergency Contact Information<i class="fa fa-caret-down pull-right" aria-hidden="true"></i></h3>
 </div>
 
-<div class="collapse panel-body" id="part23">
+<div class="collapse in panel-body" id="part23">
     <div class="form-group row {{ $errors->has('alt_eme_relation') ? ' has-error' : '' }}">
         <label for="alt_eme_relation" class="col-md-4 control-label">
             Relationship to Participant <i style="color:red" class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="If you choose 'None' as a relationship, then no fields below are required."></i></label>

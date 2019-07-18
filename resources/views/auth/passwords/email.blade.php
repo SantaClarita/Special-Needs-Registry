@@ -9,6 +9,9 @@
                 <div class="panel-heading">Reset Password</div>
                 <div class="panel-body">
                     @if (session('status'))
+                        <div class="alert alert-warning">
+                            <b>Sbcglobal.net</b> and <b>at&t.net</b> emails please contact <a href="mailto:{{config('app.adminEmail')}}">SNRadmin@santa-clarita.com</a> <b>from your att/sbc email</b> for assistance in resetting your password.
+                        </div>
                         <div class="alert alert-success">
                             {{ session('status') }} Don't forget to check your junk mail folder if you can't find this email in your inbox. Contact <a href="mailto:{{config('app.adminEmail')}}">SNRadmin@santa-clarita.com</a> if you are still having further issues.
                         </div>
