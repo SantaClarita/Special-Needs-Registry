@@ -5,21 +5,22 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
-        "laravel/framework": "5.3.*",
+        "php": ">=7.0.0",
+        "laravel/framework": "5.5.*",
         "barryvdh/laravel-dompdf": "^0.8.0",
         "h4cc/wkhtmltopdf-i386": "0.12.x",
         "h4cc/wkhtmltoimage-i386": "0.12.x",
-        "barryvdh/laravel-snappy": "^0.3.3",
         "nicolaslopezj/searchable": "1.*",
         "rap2hpoutre/laravel-log-viewer": "^0.10.4",
         "doctrine/dbal": "^2.5",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "laravel/tinker": "^1.0"
     },
     "require-dev": {
+        "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
+        "phpunit/phpunit": "~6.0",
         "symfony/css-selector": "2.8.*|3.1.*",
         "symfony/dom-crawler": "2.8.*|3.1.*"
     },
@@ -50,6 +51,10 @@
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "php artisan package:discover"
         ]
     },
     "config": {
