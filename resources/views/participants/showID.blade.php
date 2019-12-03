@@ -6,9 +6,11 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix hidden-print">
             <button class="pull-right btn btn-primary hidden-print" onclick="myPrint()"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+            @can('viewParticipantFlyer', $participant)
             <a href="{{ url('/participants/flyer/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-newspaper-o"></i> Flyer </button></a>
+            @endcan
             <a href="{{ url('/participants/profile/'.$participant->id) }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-user-circle"></i> Profile </button></a>
-            <a href="{{ url('/participants/search') }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-arrow-left"></i> Back</button></a>
+            <!-- <a href="{{ url('/participants/search') }}"><button class="pull-right btn btn-default btn-primary"><i class="fa fa-arrow-left"></i> Back</button></a> -->
         </div>
     </div>
         <div class="ProfileID clearfix">

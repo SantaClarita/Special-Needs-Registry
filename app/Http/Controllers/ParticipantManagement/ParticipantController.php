@@ -440,6 +440,7 @@ class ParticipantController extends Controller
         $participant = Participant::onlyTrashed()->find($id);
         if (policy(Participant::class)->manageParticipantList(Auth::user(), $participant)) {
             $name = $participant->fname.' '.$participant->middleinitial.' '.$participant->lname;
+            $participant->timestamps = false;
             $participant->restore();
             //Cannot restore many to many without a custom function/trait
             //$participant->disabilities()->restore();
