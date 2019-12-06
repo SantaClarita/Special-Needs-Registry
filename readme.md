@@ -41,7 +41,7 @@ These are the current email features.
 	5. Password Reset  
 	6. Guest/user uses the contact form  
 
-## Quick Setup (Local) (https://laravel.com/docs/5.3/installation)
+## Quick Setup (Local) (https://laravel.com/docs/5.5/installation)
 
 	Skill Requirements
 	* Ability to setup a server on the cloud and perform installations, modifications, and upgrades of MySQL, PHP, Apache/NGINX HTTP Server.
