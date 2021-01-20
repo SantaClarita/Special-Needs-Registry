@@ -71,6 +71,7 @@ class ApplicationController extends Controller
     {
         if (policy(Participant::class)->manageParticipantList(Auth::user(), $participant)) {
             $this->validate($request, [ 
+                'image' => 'filled|mimes:jpg,jpeg,png|dimensions:min_width=250,min_height=250',
                 'fname' => 'required|max:255',
                 'middleinitial' => 'max:5',
                 'lname' => 'required|max:255',
@@ -398,7 +399,7 @@ class ApplicationController extends Controller
     protected function store(Request $request)
     {
         $this->validate($request, [ 
-            'image' => 'required|image:jpg,jpeg,png|dimensions:min_width=250,min_height=250',
+            'image' => 'required|mimes:jpg,jpeg,png|dimensions:min_width=250,min_height=250',
             'fname' => 'required|max:255',
             'middleinitial' => 'max:5',
             'lname' => 'required|max:255',
