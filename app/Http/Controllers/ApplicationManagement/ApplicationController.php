@@ -283,8 +283,7 @@ class ApplicationController extends Controller
             if($participant->status < 4)
                 $participant->status  = 4;
             $participant->save(); 
-
-            return redirect()->route('nav', ['application' => $participant,]);
+            return redirect()->route('nav', ['participant' => $participant,]);
         }
         abort(401, 'You are not authorized to view or preform that action.'); 
     }
@@ -335,7 +334,7 @@ class ApplicationController extends Controller
             else
                 $participant->disabilities()->sync($request->input('disab')); 
 
-            return redirect()->route('nav', ['application' => $participant,]);
+            return redirect()->route('nav', ['participant' => $participant,]);
         }
         abort(401, 'You are not authorized to view or preform that action.'); 
     }
