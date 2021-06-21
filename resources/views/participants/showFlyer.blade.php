@@ -99,7 +99,7 @@
                         <div id="loader" style="display:none;"></div>
                     </div>
                     <div class="panel-body"> 
-                        <div id="flyerimage">
+                        <div id="flyerimage" style="width:200px;height:200px;">
                             @if ($participant->imagechk())
                                 <img class="aspectImage img-rounded" src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" alt="{{ url('images/nophoto.jpg') }}" height="200" width="200">
                             @else 

@@ -36,6 +36,17 @@ div.panel-default > .panel-heading {
   border-color: darkgray;
 }
 
+.aspectImage {
+  background: rgba(136,136,136, .3);
+  object-fit: scale-down;
+  overflow: contain;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  margin-top: 15px;
+}
+
 #flyerbody {
     width:485px;
     float:right;

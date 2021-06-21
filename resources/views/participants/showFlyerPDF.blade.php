@@ -21,9 +21,9 @@
             <div class="panel-body">
                     <div id="flyerimage" style="width:200px;height:200px;">
                         @if ($participant->imagechk())
-                            <img class="img-rounded" src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" alt="TEMP No Image Found" height="200" width="200">
+                            <img class="aspectImage img-rounded" src="data:image/jpeg;base64, {{ base64_encode(Storage::get($participant->image_link)) }}" alt="{{ url('images/nophoto.jpg') }}">
                         @else 
-                            <img class="img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="200" width="200">
+                            <img class="aspectImage img-rounded" src="{{ url('images/nophoto.jpg') }}" alt="No Image Found" height="200" width="200">
                         @endif
                     </div>
                     <div id="flyerbody">
