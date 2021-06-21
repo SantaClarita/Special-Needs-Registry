@@ -36,41 +36,43 @@
                 <span class="btn btn-primary btn-xs" style="color:white;" role="button" data-toggle="collapse" href="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
                         <h4 style="color:black;" class="fa fa-filter"> </h4>   Filters   
                 </span>
-                <div id="collapseFilter" class="panel collapse" role="tabpanel" aria-labelledby="filters" style="background-color:#F5F5F5; position:absolute">
-                    <h4>Filters</h4>
-                    <div class="pull-right">
-                        <label> Age
-                            <select class="selectpicker" name="age_range" title="Age Filter" data-width="auto">
-                                <option value="0" {{ old("age_range") == "0" ? "selected" :"" }}>All Ages</option>
-                                <option value="1" {{ old("age_range") == "1" ? "selected" :"" }}>5 - less</option>
-                                <option value="2" {{ old("age_range") == "2" ? "selected" :"" }}>6 - 10</option>
-                                <option value="3" {{ old("age_range") == "3" ? "selected" :"" }}>11 - 15</option>
-                                <option value="4" {{ old("age_range") == "4" ? "selected" :"" }}>16 - 20</option>
-                                <option value="5" {{ old("age_range") == "5" ? "selected" :"" }}>21 - 25</option>
-                                <option value="6" {{ old("age_range") == "6" ? "selected" :"" }}>26 - 30</option>
-                                <option value="7" {{ old("age_range") == "7" ? "selected" :"" }}>31 - 40</option>
-                                <option value="8" {{ old("age_range") == "8" ? "selected" :"" }}>41 - 50</option>
-                                <option value="9" {{ old("age_range") == "9" ? "selected" :"" }}>51 - 60</option>
-                                <option value="10" {{ old("age_range") == "10" ? "selected" :"" }}>61 - 70</option>
-                                <option value="11" {{ old("age_range") == "11" ? "selected" :"" }}>70 or more</option>
-                            </select>
-                        </label>
-                    </div>
-                    <div class="pull-right">
-                        <label> Gender
-                            <select class="selectpicker" name="gender" title="Gender" data-width="auto">
-                                <option value="" {{ old("gender") == "" ? "selected" :"" }}>None</option> 
-                                <option value="Male" {{ old("gender") == "Male" ? "selected" :"" }}>Male</option> 
-                                <option value="Female" {{ old("gender") == "Female" ? "selected" :"" }}>Female</option> 
-                            </select>
-                        </label>
-                    </div>
-                    <div class="pull-right">
-                        @can('manageParticipantList', $tmp)
-                        <label> Include Deleted? <input style="margin-right: 10px;margin-left:10px;" type="checkbox" name="searchdeleted" value="1"
-                        {{ (old("searchdeleted") == "1" ? "checked" :"") }}
-                        ></label>
-                        @endcan
+                <div id="collapseFilter" class="panel collapse" role="tabpanel" aria-labelledby="filters" style="background-color:lightgray; position:absolute; padding: 10px;">
+                    <div class="pa-4">
+                        <h4>Filters</h4>
+                        <div class="row">
+                            <label> Age
+                                <select class="selectpicker" name="age_range" title="Age Filter" data-width="auto">
+                                    <option value="0" {{ old("age_range") == "0" ? "selected" :"" }}>All Ages</option>
+                                    <option value="1" {{ old("age_range") == "1" ? "selected" :"" }}>5 - less</option>
+                                    <option value="2" {{ old("age_range") == "2" ? "selected" :"" }}>6 - 10</option>
+                                    <option value="3" {{ old("age_range") == "3" ? "selected" :"" }}>11 - 15</option>
+                                    <option value="4" {{ old("age_range") == "4" ? "selected" :"" }}>16 - 20</option>
+                                    <option value="5" {{ old("age_range") == "5" ? "selected" :"" }}>21 - 25</option>
+                                    <option value="6" {{ old("age_range") == "6" ? "selected" :"" }}>26 - 30</option>
+                                    <option value="7" {{ old("age_range") == "7" ? "selected" :"" }}>31 - 40</option>
+                                    <option value="8" {{ old("age_range") == "8" ? "selected" :"" }}>41 - 50</option>
+                                    <option value="9" {{ old("age_range") == "9" ? "selected" :"" }}>51 - 60</option>
+                                    <option value="10" {{ old("age_range") == "10" ? "selected" :"" }}>61 - 70</option>
+                                    <option value="11" {{ old("age_range") == "11" ? "selected" :"" }}>70 or more</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="row">
+                            <label> Gender
+                                <select class="selectpicker" name="gender" title="Gender" data-width="auto">
+                                    <option value="" {{ old("gender") == "" ? "selected" :"" }}>None</option> 
+                                    <option value="Male" {{ old("gender") == "Male" ? "selected" :"" }}>Male</option> 
+                                    <option value="Female" {{ old("gender") == "Female" ? "selected" :"" }}>Female</option> 
+                                </select>
+                            </label>
+                        </div>
+                        <div class="row">
+                            @can('manageParticipantList', $tmp)
+                            <label> Include Deleted? <input style="margin-right: 10px;margin-left:10px;" type="checkbox" name="searchdeleted" value="1"
+                            {{ (old("searchdeleted") == "1" ? "checked" :"") }}
+                            ></label>
+                            @endcan
+                        </div>
                     </div>
                 </div>
                 <div class="input-group">

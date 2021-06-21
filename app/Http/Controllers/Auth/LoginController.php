@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Auth;
+
 class LoginController extends Controller
 {
     /*
@@ -37,11 +39,15 @@ class LoginController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
     }
 
-    public function authenticate()
+    public function authenticated()
     {
-        if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
-            // Authentication passed...
-            return redirect()->intended('participants');
+        $roles = Auth::user()->roles()->get();
+        if($roles->count() == 0) {
+            foreach ($roles as $key => $role) {
+                if($role->name == "Sheriff")
+                    return redirect()->intended('participants/search');
+            }
         }
+        return redirect()->intended('participants');
     }
 }

@@ -88,7 +88,7 @@
                         <div>
                             <a target="_blank" class="hidden-print" href="{{ url('/participants/showFlyerPDF/'.$participant->id) }}">
                             <button class="btn btn-danger btn-primary pull-right" id="downloadButton">
-                                <i class="fa fa-file-pdf-o"></i> Download </button></a>
+                                <i class="fa fa-file-pdf-o"></i> Generate PDF </button></a>
                             @can('emailParticipantFlyer', $participant)
                             <button data-toggle="modal" data-target="#confirm-email-flyer" type="submit" class="hidden-print btn btn-default btn-primary pull-right">
                                 <i class="fa fa-envelope"></i> Email
