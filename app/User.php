@@ -76,7 +76,7 @@ class User extends Authenticatable
         {
             foreach ($role->permissions()->get() as $permission)
             {
-                if ($permission->id == '1' || $permission->id == '8' || $permission->id == '9' || $permission->id == '10' )
+                if ($permission->id == '1' || $permission->id == '8' || $permission->id == '9' || $permission->id == '10' || $permission->id == '3' )
                 {
                     return true;
                 }

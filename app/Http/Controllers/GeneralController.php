@@ -59,4 +59,9 @@ class GeneralController extends Controller
         $request->session()->flash('status', 'Your message was sent to an admin successfully!');
         return redirect()->back(); //with flash success 
     }
+
+    public function tutorialIndex(Request $request)
+    {
+        return view('tutorial');
+    }
 }

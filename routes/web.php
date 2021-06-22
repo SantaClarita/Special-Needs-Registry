@@ -112,3 +112,6 @@ Route::delete('/settings/delete/{setting}/{emaillist}', 'SettingManagement\Setti
 //logs
 //By Rap2h
 Route::get('/logs', 'LogController@index');
+
+//Tutorial
+Route::get('/tutorial', 'GeneralController@tutorialIndex');
