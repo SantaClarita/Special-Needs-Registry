@@ -42,10 +42,11 @@ class LoginController extends Controller
     public function authenticated()
     {
         $roles = Auth::user()->roles()->get();
-        if($roles->count() == 0) {
+        if($roles->count() == 1) {
             foreach ($roles as $key => $role) {
-                if($role->name == "Sheriff")
+                if($role->name == "Sheriff") {
                     return redirect()->intended('participants/search');
+                }
             }
         }
         return redirect()->intended('participants');

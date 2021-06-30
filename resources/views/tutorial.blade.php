@@ -17,27 +17,38 @@
     <div class="panel panel-default ">
         <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question1">
             <h4 class="panel-title">
-            	<a href="#" class="ing">View ALL participant profiles - Ability to view any participant profiles</a><i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+            	<a href="#" class="ing">View profiles - Ability to view any profiles</a><i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
         	</h4>
         </div>
         <div id="question1" class="panel-collapse collapse">
             <div class="panel-body">
-                <p>
-                    zaa
-
-                </p>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background-color:#337ab7;">
+                        <h3 class="panel-title">Click on the Profile Button</h3>
+                    </div>
+                    <img class="img-responsive" src="{{asset('images/profile_button.png')}}" alt="...">
+                </div>
             </div>
         </div>
     </div>
     <div class="panel panel-default ">
         <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question2">
              	<h4 class="panel-title">
-                <a href="#" class="ing">View ALL participant flyers - Ability to view any participant flyers</a> <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                <a href="#" class="ing">View and generate flyers - Ability to view and generate any flyers</a> <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
           </h4>
         </div>
         <div id="question2" class="panel-collapse collapse">
             <div class="panel-body">
-                <p>Video 3.</p>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background-color:#337ab7;">
+                        <h3 class="panel-title">First Click on the Flyer Button</h3>
+                    </div>
+                    <img class="img-responsive" src="{{asset('images/flyer_button.png')}}" alt="...">
+                </div>
+                 <div class="panel panel-primary">
+                    <div class="panel-heading" style="background-color:#337ab7;">Then Click on the Generate Flyer Button. This will create a PDF version of the flyer where you can download.</div>
+                    <img class="img-responsive" src="{{asset('images/generate_flyer_button.png')}}" alt="...">
+                </div>
             </div>
         </div>
     </div>

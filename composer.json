@@ -7,7 +7,6 @@
     "require": {
         "php": ">=7.0.0",
         "laravel/framework": "^6.0",
-        "barryvdh/laravel-dompdf": "^0.8.0",
         "h4cc/wkhtmltopdf-i386": "0.12.x",
         "h4cc/wkhtmltoimage-i386": "0.12.x",
         "nicolaslopezj/searchable": "1.*",
@@ -15,7 +14,9 @@
         "doctrine/dbal": "^2.5",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/tinker": "^1.0",
-        "laravel/helpers": "^1.4"
+        "laravel/helpers": "^1.4",
+        "barryvdh/laravel-dompdf": "^0.9.0",
+        "mpdf/mpdf": "^8.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

@@ -115,3 +115,5 @@ Route::get('/logs', 'LogController@index');
 
 //Tutorial
 Route::get('/tutorial', 'GeneralController@tutorialIndex');
+
+Route::get('/sheriff', 'ParticipantManagement\ParticipantController@search');
