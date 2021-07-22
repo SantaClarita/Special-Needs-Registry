@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '- FAQs')
+@section('title', '- Tutorial')
 @section('content')
 <div class="panel-group" id="faqAccordion">
     <div class="panel panel-default ">
@@ -10,7 +10,9 @@
         </div>
         <div id="question0" class="panel-collapse collapse">
             <div class="panel-body">
-                <p>Video 1</p>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{{asset('video/tutorial.mp4')}}"></iframe>
+                </div>
             </div>
         </div>
     </div>
