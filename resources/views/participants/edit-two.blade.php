@@ -9,12 +9,12 @@
         <div class="col-md-8 form-group ml-2">
             <label>
                 <input type="radio" value="1" name="livealone" 
-                    {{ (old("livealone") == "1" ? "checked": $participant->getOriginal("livealone") == "1" ? "checked":"") }}>
+                    {{ old("livealone") == "1" ? "checked": ($participant->getOriginal("livealone") == "1" ? "checked":"") }}>
                 Yes
             </label>
             <label>
                 <input type="radio" value="0" name="livealone" 
-                    {{ (old("livealone") == "0" ? "checked": $participant->getOriginal("livealone") == "0" ? "checked":"") }}>
+                    {{ old("livealone") == "0" ? "checked": ($participant->getOriginal("livealone") == "0" ? "checked":"") }}>
                 No
             </label>
             @if ($errors->has('livealone'))
@@ -30,17 +30,17 @@
         <div class="col-md-8 form-group ml-2">
             <label>
                 <input type="radio" value="1" name="typeofresidence" 
-                    {{ (old("typeofresidence") == "1" ? "checked": $participant->getOriginal("typeofresidence") == "1" ? "checked":"") }}>
+                    {{ old("typeofresidence") == "1" ? "checked": ($participant->getOriginal("typeofresidence") == "1" ? "checked":"") }}>
                 Family Home
             </label>
             <label>
                 <input type="radio" value="2" name="typeofresidence" 
-                    {{ (old("typeofresidence") == "2" ? "checked": $participant->getOriginal("typeofresidence") == "2" ? "checked":"") }}>
+                    {{ old("typeofresidence") == "2" ? "checked": ($participant->getOriginal("typeofresidence") == "2" ? "checked":"") }}>
                 Group Home
             </label>
             <label>
                 <input type="radio" value="3" name="typeofresidence" 
-                    {{ (old("typeofresidence") == "3" ? "checked": $participant->getOriginal("typeofresidence") == "3" ? "checked":"") }}>
+                    {{ old("typeofresidence") == "3" ? "checked": ($participant->getOriginal("typeofresidence") == "3" ? "checked":"") }}>
                 Other
             </label>
             @if ($errors->has('typeofresidence'))
@@ -50,7 +50,7 @@
             @endif
         </div>
     </div>
-    <div class="form-group row {{ $errors->has('address1') ? ' has-error' : $errors->has('address2') ? ' has-error' : '' }}">
+    <div class="form-group row {{ $errors->has('address1') ? ' has-error' : ($errors->has('address2') ? ' has-error' : '') }}">
         <label for="address1" class="col-md-4 control-label">
             Street Address <font color="red">*</font></label>
         <div class="col-md-6 form-group">
@@ -151,12 +151,12 @@
         <div class="col-md-6 form-group">
             <select name="eme_relation" class="form-control" id="eme_relation">
                 <option disabled selected value> -- Relationship to Participant -- </option>
-                <option value="1" {{ (old("eme_relation") == "1" ? "selected":$participant->getOriginal("eme_relation") == "1" ? "selected":"") }}>Parent</option>
-                <option value="2" {{ (old("eme_relation") == "2" ? "selected":$participant->getOriginal("eme_relation") == "2" ? "selected":"") }}>Guardian/Caregiver</option>
-                <option value="3" {{ (old("eme_relation") == "3" ? "selected":$participant->getOriginal("eme_relation") == "3" ? "selected":"") }}>Spouse</option>
-                <option value="4" {{ (old("eme_relation") == "4" ? "selected":$participant->getOriginal("eme_relation") == "4" ? "selected":"") }}>Son/Daughter</option>
-                <option value="5" {{ (old("eme_relation") == "5" ? "selected":$participant->getOriginal("eme_relation") == "5" ? "selected":"") }}>Brother/Sister</option>
-                <option value="6" {{ (old("eme_relation") == "6" ? "selected":$participant->getOriginal("eme_relation") == "6" ? "selected":"") }}>Other</option>
+                <option value="1" {{ old("eme_relation") == "1" ? "selected": ($participant->getOriginal("eme_relation") == "1" ? "selected":"") }}>Parent</option>
+                <option value="2" {{ old("eme_relation") == "2" ? "selected": ($participant->getOriginal("eme_relation") == "2" ? "selected":"") }}>Guardian/Caregiver</option>
+                <option value="3" {{ old("eme_relation") == "3" ? "selected": ($participant->getOriginal("eme_relation") == "3" ? "selected":"") }}>Spouse</option>
+                <option value="4" {{ old("eme_relation") == "4" ? "selected": ($participant->getOriginal("eme_relation") == "4" ? "selected":"") }}>Son/Daughter</option>
+                <option value="5" {{ old("eme_relation") == "5" ? "selected": ($participant->getOriginal("eme_relation") == "5" ? "selected":"") }}>Brother/Sister</option>
+                <option value="6" {{ old("eme_relation") == "6" ? "selected": ($participant->getOriginal("eme_relation") == "6" ? "selected":"") }}>Other</option>
             </select>
             @if ($errors->has('eme_relation'))
                 <span class="help-block">
@@ -177,7 +177,7 @@
             @endif
         </div>
     </div>
-    <div class="form-group row {{ $errors->has('eme_address1') ? ' has-error' : $errors->has('eme_address2') ? ' has-error' : '' }}">
+    <div class="form-group row {{ $errors->has('eme_address1') ? ' has-error' : ($errors->has('eme_address2') ? ' has-error' : '') }}">
         <label for="eme_address1" class="col-md-4 control-label">
             Street Address <font color="red">*</font></label>
         <div class="col-md-6 form-group">
@@ -278,13 +278,13 @@
         <div class="col-md-6 form-group">
             <select name="alt_eme_relation" id="alt_eme_relation" class="form-control">
                 <option disabled selected value> -- Relationship to Participant -- </option>
-                <option value="1" {{ (old("alt_eme_relation") == "1" ? "selected":$participant->getOriginal("alt_eme_relation") == "1" ? "selected":"") }}>Parent</option>
-                <option value="2" {{ (old("alt_eme_relation") == "2" ? "selected":$participant->getOriginal("alt_eme_relation") == "2" ? "selected":"") }}>Guardian/Caregiver</option>
-                <option value="3" {{ (old("alt_eme_relation") == "3" ? "selected":$participant->getOriginal("alt_eme_relation") == "3" ? "selected":"") }}>Spouse</option>
-                <option value="4" {{ (old("alt_eme_relation") == "4" ? "selected":$participant->getOriginal("alt_eme_relation") == "4" ? "selected":"") }}>Son/Daughter</option>
-                <option value="5" {{ (old("alt_eme_relation") == "5" ? "selected":$participant->getOriginal("alt_eme_relation") == "5" ? "selected":"") }}>Brother/Sister</option>
-                <option value="6" {{ (old("alt_eme_relation") == "6" ? "selected":$participant->getOriginal("alt_eme_relation") == "6" ? "selected":"") }}>Other</option>
-                <option value="0" {{ (old("alt_eme_relation") == "0" ? "selected":$participant->getOriginal("alt_eme_relation") == "0" ? "selected":"") }}>None</option>
+                <option value="1" {{ old("alt_eme_relation") == "1" ? "selected": ( $participant->getOriginal("alt_eme_relation") == "1" ? "selected":"") }}>Parent</option>
+                <option value="2" {{ old("alt_eme_relation") == "2" ? "selected": ( $participant->getOriginal("alt_eme_relation") == "2" ? "selected":"") }}>Guardian/Caregiver</option>
+                <option value="3" {{ old("alt_eme_relation") == "3" ? "selected": ( $participant->getOriginal("alt_eme_relation") == "3" ? "selected":"") }}>Spouse</option>
+                <option value="4" {{ old("alt_eme_relation") == "4" ? "selected": ( $participant->getOriginal("alt_eme_relation") == "4" ? "selected":"") }}>Son/Daughter</option>
+                <option value="5" {{ old("alt_eme_relation") == "5" ? "selected": ( $participant->getOriginal("alt_eme_relation") == "5" ? "selected":"") }}>Brother/Sister</option>
+                <option value="6" {{ old("alt_eme_relation") == "6" ? "selected": ( $participant->getOriginal("alt_eme_relation") == "6" ? "selected":"") }}>Other</option>
+                <option value="0" {{ old("alt_eme_relation") == "0" ? "selected": ( $participant->getOriginal("alt_eme_relation") == "0" ? "selected":"") }}>None</option>
             </select>
             @if ($errors->has('alt_eme_relation'))
                 <span class="help-block">
@@ -305,7 +305,7 @@
             @endif
         </div>
     </div>
-    <div class="form-group row {{ $errors->has('alt_eme_address1') ? ' has-error' : $errors->has('alt_eme_address2') ? ' has-error' : '' }}">
+    <div class="form-group row {{ $errors->has('alt_eme_address1') ? ' has-error' : ($errors->has('alt_eme_address2') ? ' has-error' : '') }}">
         <label for="alt_eme_address1" class="col-md-4 control-label">
             Street Address <font color="blue">*</font></label>
         <div class="col-md-6 form-group">

@@ -94,7 +94,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group row {{ $errors->has('month') ? ' has-error' : $errors->has('day') ? ' has-error': $errors->has('year') ? ' has-error' : '' }}">
+                    <div class="form-group row {{ $errors->has('month') ? ' has-error' : ($errors->has('day') ? ' has-error': ($errors->has('year') ? ' has-error' : '')) }}">
                         <label for="date" class="col-md-4 control-label">Birthdate <font color="red">*</font></label>
                         <div class="col-md-8 form-group">
                             <div class="row">

@@ -4,17 +4,17 @@
     <div class="col-md-6 form-group">
         <select name="ethnicity1" id="ethnicity1" class="form-control">
             <option disabled selected value>Select an Ethnicity</option>
-            <option value="0" {{ (old("ethnicity1") == "0" ? "selected" : $participant->getOriginal("ethnicity1") == "0" ? "selected" :"") }}>Unknown</option>
-            <option value="1" {{ (old("ethnicity1") == "1" ? "selected" : $participant->getOriginal("ethnicity1") == "1" ? "selected" :"") }}>Asian</option>
-            <option value="2" {{ (old("ethnicity1") == "2" ? "selected" : $participant->getOriginal("ethnicity1") == "2" ? "selected" :"") }}>American Indian</option>
-            <option value="3" {{ (old("ethnicity1") == "3" ? "selected" : $participant->getOriginal("ethnicity1") == "3" ? "selected" :"") }}>Black</option>
-            <option value="4" {{ (old("ethnicity1") == "4" ? "selected" : $participant->getOriginal("ethnicity1") == "4" ? "selected" :"") }}>Chinese</option>
-            <option value="5" {{ (old("ethnicity1") == "5" ? "selected" : $participant->getOriginal("ethnicity1") == "5" ? "selected" :"") }}>Filipino</option>
-            <option value="6" {{ (old("ethnicity1") == "6" ? "selected" : $participant->getOriginal("ethnicity1") == "6" ? "selected" :"") }}>Hispanic</option>
-            <option value="7" {{ (old("ethnicity1") == "7" ? "selected" : $participant->getOriginal("ethnicity1") == "7" ? "selected" :"") }}>Japanese</option>
-            <option value="8" {{ (old("ethnicity1") == "8" ? "selected" : $participant->getOriginal("ethnicity1") == "8" ? "selected" :"") }}>Pacific Islander</option>
-            <option value="9" {{ (old("ethnicity1") == "9" ? "selected" : $participant->getOriginal("ethnicity1") == "9" ? "selected" :"") }}>White</option>
-            <option value="11" {{ (old("ethnicity1") == "11" ? "selected" : $participant->getOriginal("ethnicity1") == "11" ? "selected" :"") }}>Other</option>
+            <option value="0" {{ (old("ethnicity1") == "0" ? "selected"   : ($participant->getOriginal("ethnicity1") == "0" ?  "selected" :"")) }}>Unknown</option>
+            <option value="1" {{ (old("ethnicity1") == "1" ? "selected"   : ($participant->getOriginal("ethnicity1") == "1" ?  "selected" :"")) }}>Asian</option>
+            <option value="2" {{ (old("ethnicity1") == "2" ? "selected"   : ($participant->getOriginal("ethnicity1") == "2" ?  "selected" :"")) }}>American Indian</option>
+            <option value="3" {{ (old("ethnicity1") == "3" ? "selected"   : ($participant->getOriginal("ethnicity1") == "3" ?  "selected" :"")) }}>Black</option>
+            <option value="4" {{ (old("ethnicity1") == "4" ? "selected"   : ($participant->getOriginal("ethnicity1") == "4" ?  "selected" :"")) }}>Chinese</option>
+            <option value="5" {{ (old("ethnicity1") == "5" ? "selected"   : ($participant->getOriginal("ethnicity1") == "5" ?  "selected" :"")) }}>Filipino</option>
+            <option value="6" {{ (old("ethnicity1") == "6" ? "selected"   : ($participant->getOriginal("ethnicity1") == "6" ?  "selected" :"")) }}>Hispanic</option>
+            <option value="7" {{ (old("ethnicity1") == "7" ? "selected"   : ($participant->getOriginal("ethnicity1") == "7" ?  "selected" :"")) }}>Japanese</option>
+            <option value="8" {{ (old("ethnicity1") == "8" ? "selected"   : ($participant->getOriginal("ethnicity1") == "8" ?  "selected" :"")) }}>Pacific Islander</option>
+            <option value="9" {{ (old("ethnicity1") == "9" ? "selected"   : ($participant->getOriginal("ethnicity1") == "9" ?  "selected" :"")) }}>White</option>
+            <option value="11" {{ (old("ethnicity1") == "11" ? "selected" : ($participant->getOriginal("ethnicity1") == "11" ? "selected" :"")) }}>Other</option>
         </select>
         @if ($errors->has('ethnicity1'))
             <span class="help-block">
@@ -29,17 +29,17 @@
     <div class="col-md-6 form-group">
         <select name="ethnicity2" id="ethnicity2" class="form-control">
             <option disabled selected value>Can leave blank</option>
-            <option value="0" {{ (old("ethnicity2") == "0" ? "selected" : $participant->getOriginal("ethnicity2") == "0" ? "selected" :"") }}>Unknown</option>
-            <option value="1" {{ (old("ethnicity2") == "1" ? "selected" : $participant->getOriginal("ethnicity2") == "1" ? "selected" :"") }}>Asian</option>
-            <option value="2" {{ (old("ethnicity2") == "2" ? "selected" : $participant->getOriginal("ethnicity2") == "2" ? "selected" :"") }}>American Indian</option>
-            <option value="3" {{ (old("ethnicity2") == "3" ? "selected" : $participant->getOriginal("ethnicity2") == "3" ? "selected" :"") }}>Black</option>
-            <option value="4" {{ (old("ethnicity2") == "4" ? "selected" : $participant->getOriginal("ethnicity2") == "4" ? "selected" :"") }}>Chinese</option>
-            <option value="5" {{ (old("ethnicity2") == "5" ? "selected" : $participant->getOriginal("ethnicity2") == "5" ? "selected" :"") }}>Filipino</option>
-            <option value="6" {{ (old("ethnicity2") == "6" ? "selected" : $participant->getOriginal("ethnicity2") == "6" ? "selected" :"") }}>Hispanic</option>
-            <option value="7" {{ (old("ethnicity2") == "7" ? "selected" : $participant->getOriginal("ethnicity2") == "7" ? "selected" :"") }}>Japanese</option>
-            <option value="8" {{ (old("ethnicity2") == "8" ? "selected" : $participant->getOriginal("ethnicity2") == "8" ? "selected" :"") }}>Pacific Islander</option>
-            <option value="9" {{ (old("ethnicity2") == "9" ? "selected" : $participant->getOriginal("ethnicity2") == "9" ? "selected" :"") }}>White</option>
-            <option value="11" {{ (old("ethnicity2") == "11" ? "selected" : $participant->getOriginal("ethnicity2") == "11" ? "selected" :"") }}>Other</option>
+            <option value="0" {{ (old("ethnicity2") == "0" ? "selected" :   ($participant->getOriginal("ethnicity2") == "0" ? "selected" :"")) }}>Unknown</option>
+            <option value="1" {{ (old("ethnicity2") == "1" ? "selected" :   ($participant->getOriginal("ethnicity2") == "1" ? "selected" :"")) }}>Asian</option>
+            <option value="2" {{ (old("ethnicity2") == "2" ? "selected" :   ($participant->getOriginal("ethnicity2") == "2" ? "selected" :"")) }}>American Indian</option>
+            <option value="3" {{ (old("ethnicity2") == "3" ? "selected" :   ($participant->getOriginal("ethnicity2") == "3" ? "selected" :"")) }}>Black</option>
+            <option value="4" {{ (old("ethnicity2") == "4" ? "selected" :   ($participant->getOriginal("ethnicity2") == "4" ? "selected" :"")) }}>Chinese</option>
+            <option value="5" {{ (old("ethnicity2") == "5" ? "selected" :   ($participant->getOriginal("ethnicity2") == "5" ? "selected" :"")) }}>Filipino</option>
+            <option value="6" {{ (old("ethnicity2") == "6" ? "selected" :   ($participant->getOriginal("ethnicity2") == "6" ? "selected" :"")) }}>Hispanic</option>
+            <option value="7" {{ (old("ethnicity2") == "7" ? "selected" :   ($participant->getOriginal("ethnicity2") == "7" ? "selected" :"")) }}>Japanese</option>
+            <option value="8" {{ (old("ethnicity2") == "8" ? "selected" :   ($participant->getOriginal("ethnicity2") == "8" ? "selected" :"")) }}>Pacific Islander</option>
+            <option value="9" {{ (old("ethnicity2") == "9" ? "selected" :   ($participant->getOriginal("ethnicity2") == "9" ? "selected" :"")) }}>White</option>
+            <option value="11" {{ (old("ethnicity2") == "11" ? "selected" : ($participant->getOriginal("ethnicity2") == "11"? "selected" :"")) }}>Other</option>
         </select>
         @if ($errors->has('ethnicity2'))
             <span class="help-block">
@@ -67,12 +67,12 @@
     <div class="col-md-6 form-group">
         <select name="eyecolor" id="eyecolor" class="form-control">
             <option selected value="{{ old( 'eyecolor', $participant->eyecolor) }}">{{ old( 'eyecolor', $participant->eyecolor) }}</option>
-            <option value="Amber"     {{ (old("eyecolor") == "Amber" ? "selected" : $participant->eyecolor == "Amber" ? "selected":"") }}>Amber</option>
-            <option value="Blue"      {{ (old("eyecolor") == "Blue" ? "selected": $participant->eyecolor == "Blue" ? "selected":"") }}>Blue</option>
-            <option value="Brown"     {{ (old("eyecolor") == "Brown" ? "selected": $participant->eyecolor == "Brown" ? "selected":"") }}>Brown</option>
-            <option value="Gray"      {{ (old("eyecolor") == "Gray" ? "selected": $participant->eyecolor == "Gray" ? "selected":"") }}>Gray</option>
-            <option value="Green"     {{ (old("eyecolor") == "Green" ? "selected": $participant->eyecolor == "Green" ? "selected":"") }}>Green</option>
-            <option value="Red/Violet"{{ (old("eyecolor") == "Red/Violet" ? "selected": $participant->eyecolor == "Red/Violet" ? "selected":"") }}>Red/Violet</option>
+            <option value="Amber"     {{ (old("eyecolor") == "Amber" ? "selected" : ($participant->eyecolor == "Amber" ? "selected":"")) }}>Amber</option>
+            <option value="Blue"      {{ (old("eyecolor") == "Blue" ? "selected": ($participant->eyecolor == "Blue" ? "selected":"")) }}>Blue</option>
+            <option value="Brown"     {{ (old("eyecolor") == "Brown" ? "selected": ($participant->eyecolor == "Brown" ? "selected":"")) }}>Brown</option>
+            <option value="Gray"      {{ (old("eyecolor") == "Gray" ? "selected": ($participant->eyecolor == "Gray" ? "selected":"")) }}>Gray</option>
+            <option value="Green"     {{ (old("eyecolor") == "Green" ? "selected": ($participant->eyecolor == "Green" ? "selected":"")) }}>Green</option>
+            <option value="Red/Violet"{{ (old("eyecolor") == "Red/Violet" ? "selected": ($participant->eyecolor == "Red/Violet" ? "selected":"")) }}>Red/Violet</option>
         </select>
         @if ($errors->has('eyecolor'))
             <span class="help-block">
@@ -81,7 +81,7 @@
         @endif
     </div>
 </div>
-<div class="form-group row {{ $errors->has('heightfeet') ? ' has-error' : $errors->has('heightinch') ? ' has-error' : '' }}">
+<div class="form-group row {{ $errors->has('heightfeet') ? ' has-error' : ($errors->has('heightinch') ? ' has-error' : '') }}">
     <label for="height" class="col-md-4 control-label">
             Height <font color="red">*</font></label>
     <div class="col-md-8 form-group">
@@ -105,7 +105,7 @@
                 <select name="heightfeet" class="form-control" style="width:auto;">
                     <option selected value> Ft </option>
                     @for ($i = 1; $i < 9; $i++)
-                        <option value='{{$i}}' {{ (old("heightfeet") == "$i" ? "selected": "$heightft" == "$i" ? "selected":"") }}>{{$i}}</option>
+                        <option value='{{$i}}' {{ old("heightfeet") == "$i" ? "selected": ("$heightft" == "$i" ? "selected":"") }}>{{$i}}</option>
                     @endfor
                 </select>
                 Feet
@@ -119,7 +119,7 @@
                 <select name="heightinch" class="form-control" style="width:auto;">
                     <option selected value> In </option>
                     @for ($i = 0; $i < 12; $i++)
-                        <option value='{{$i}}' {{ (old("heightinch") == "$i" ? "selected": "$heightin" == "$i" ? "selected":"") }}>{{$i}}</option>
+                        <option value='{{$i}}' {{ old("heightinch") == "$i" ? "selected": ("$heightin" == "$i" ? "selected":"") }}>{{$i}}</option>
                     @endfor
                 </select>
                 Inches

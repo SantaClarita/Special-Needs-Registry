@@ -2,8 +2,9 @@
 
 namespace App\Console;
 
-use Mail;
+use Artisan;
 use Carbon;
+use Mail;
 
 use App\Participant;
 use App\User;
@@ -30,6 +31,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->call(function () {
+            $exitCode = Artisan::call('queue:work', [
+                '--once' => true,
+            ]);
+            echo $exitCode;
+        })->everyMinute();
+
         /*$schedule->call(function () {
             $participants = Participant::where('updated_at', '<=', Carbon\Carbon::now()->subMonths(6))->get();
             //check if emailed_at is more than 6 months and if updated_at is more than 6 months

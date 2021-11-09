@@ -8,15 +8,15 @@
             Does participant tend to wander off or elope? <font color="red">*</font></label>
         <div class="col-md-8 form-group ml-2">
             <label>
-                <input type="radio" value="1" name="wanders" {{ (old("wanders") == "1" ? "checked": $participant->getOriginal("wanders") == "1" ? "checked":"") }}>
+                <input type="radio" value="1" name="wanders" {{ old("wanders") == "1" ? "checked": ( $participant->getOriginal("wanders") == "1" ? "checked":"") }}>
                 Yes
             </label>
             <label>
-                <input type="radio" value="2" name="wanders" {{ (old("wanders") == "2" ? "checked": $participant->getOriginal("wanders") == "2" ? "checked":"") }}>
+                <input type="radio" value="2" name="wanders" {{ old("wanders") == "2" ? "checked": ( $participant->getOriginal("wanders") == "2" ? "checked":"") }}>
                 No
             </label>
             <label>
-                <input type="radio" value="3" name="wanders" {{ (old("wanders") == "3" ? "checked": $participant->getOriginal("wanders") == "3" ? "checked":"") }}>
+                <input type="radio" value="3" name="wanders" {{ old("wanders") == "3" ? "checked": ( $participant->getOriginal("wanders") == "3" ? "checked":"") }}>
                 Sometimes
             </label>
             @if ($errors->has('wanders'))

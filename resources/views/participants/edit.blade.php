@@ -43,7 +43,7 @@
                     <select class="selectpicker" name="user" title="No Owner Found">
                         @foreach ($users as $i=>$user)
                          <option value="{{$user->id}}" 
-                            {{ (old("user") == $user->id ? "selected":$user->id == $participant->user_id ? "selected":"") }}
+                            {{ old("user") == $user->id ? "selected" : ($user->id == $participant->user_id ? "selected":"") }}
                             >{{$user->fname.' '.$user->lname.' ('.$user->email.')'}}</option>
                         @endforeach
                     </select>   
