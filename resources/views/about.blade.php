@@ -48,7 +48,7 @@
             </div>
         </div>
 
-         <div class="panel-heading clearfix" role="tab" id="headingTwo">
+        <div class="panel-heading clearfix" role="tab" id="headingTwo">
             <h4 class="panel-title">
                 <span role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
                     <div>
@@ -60,6 +60,32 @@
         <div id="collapse-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
                 <p>The secure information you provide will be instantly available to authorized members of the Sheriff's department for use in an emergency. It is visible only to you, the Sheriffs and the program administrators.</p>
+            </div>
+        </div>
+
+        <div class="panel-heading clearfix" role="tab" id="headingFour">
+            <h4 class="panel-title">
+                <span role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="true" aria-controls="collapse-1">
+                    <div>
+                        What if I can’t fill out a registration form online?
+                    </div>
+                </span>
+            </h4>
+        </div>
+        <div id="collapse-3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+                <p> For help registering an individual or using the registry form, please contact Family Focus Resource Center at {{config('app.familyFocusPhone')}} or email <u><a href="mailto:{{config('app.adminEmail')}}">{{config('app.adminEmail')}}</a></u>
+            	</p>
+            	<p> If you are unable to complete the online version of the the registry form, <u><a target="_blank" href="{{ url('/documents/SNRSCV_printfill.pdf') }}">download the form instead</a></u>.  You can print this form, attach a photo, and mail it to the address below. Your registration information and photo will be entered in the secure database for you.
+            	</p>
+            	<p>To mail in the completed SNR form, address the envelope like this:
+            	</p>
+            	<p>
+            		Family Focus Resource Center</br>
+					Attention SNR</br>
+					25360 Magic Mountain Parkway, Suite 150</br>
+					Santa Clarita, CA 91355
+            	</p>
             </div>
         </div>
 
