@@ -21,7 +21,7 @@ if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
 Route::get('/faqs', 'GeneralController@faqsIndex');
 Route::get('/contactus', 'GeneralController@contactIndex');
 Route::get('/', 'GeneralController@aboutIndex');
-Route::post('/contactus', 'GeneralController@contactUs');
+//Route::post('/contactus', 'GeneralController@contactUs');
 
 //register/login users
 Auth::routes();
